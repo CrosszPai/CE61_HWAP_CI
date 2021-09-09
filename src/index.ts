@@ -7,6 +7,9 @@ export = (app: Probot) => {
     });
     await context.octokit.issues.createComment(issueComment);
   });
+  app.on("push", async (context) => {
+    console.log(context.payload.repository.url);
+  });
   // For more information on building apps:
   // https://probot.github.io/docs/
 
